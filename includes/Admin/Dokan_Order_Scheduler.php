@@ -10,7 +10,7 @@ class Dokan_Order_Scheduler {
 
 	public function migrate_order_schedule() {
 		if ( false === as_next_scheduled_action( 'order_schedule' ) ) {
-			as_schedule_recurring_action( new DateTime(), 1, 'order_schedule' );
+			as_schedule_recurring_action( time(), 1, 'order_schedule' );
 		}
 	}
 
