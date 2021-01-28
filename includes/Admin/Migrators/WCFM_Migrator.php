@@ -79,14 +79,7 @@ class WCFM_Migrator implements Migrator_Interface {
         return $wcfm_all_vendors;
     }
 
-    public function migrate() {
-        $this->migrate_withdraws();
-        $this->migrate_refunds();
-
-        $this->migrate_vendors();
-
-        $this->migrate_orders( 5 );
-    }
+    public function migrate() {}
 
     public function migrate_orders( $limit, $page = 1 ) {
         $orders = wc_get_orders( [

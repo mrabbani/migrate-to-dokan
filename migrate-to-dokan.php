@@ -27,6 +27,8 @@ final class Migrate_To_Dokan {
 		
 		register_activation_hook( __FILE__, [ $this, 'activate' ] );
 
+        require_once( plugin_dir_path( __FILE__ ) . '/libraries/action-scheduler/action-scheduler.php' );
+
         // add_action( 'init', [ $this, 'init_plugin' ] );
 
 	}
@@ -44,6 +46,7 @@ final class Migrate_To_Dokan {
     public function instance() {
 		new WeDevs\MigrateToDokan\Admin\Menu();
         new WeDevs\MigrateToDokan\REST\Migrator_Controller();
+        new WeDevs\MigrateToDokan\Admin\Dokan_Order_Scheduler();
     }
     
     public function init_plugin() {
