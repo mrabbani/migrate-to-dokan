@@ -178,7 +178,7 @@ class Dokan_Repository {
         if ( dokan_is_order_already_exists( $order_id ) ) {
             return;
         }
-        $is_dokan_order = get_post_meta( $order_id, 'is_dokan_order', true );
+        $is_dokan_order = get_post_meta( $order_id, 'is_dokan_order_migrated', true );
 
         if ( $is_dokan_order ) {
             return;
